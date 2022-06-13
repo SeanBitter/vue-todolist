@@ -53,10 +53,30 @@ new Vue(
                     done: false,
                 },
             ],
+            newTask: "",
         },
 
         methods: {
-            
-        }
+            removeToDo(i) {
+                this.list.splice(i, 1);
+            },
+
+            addToDo() {
+                const newTask = this.newTask.trim();
+
+                if (newTask === "") {
+                    return;
+                }
+
+                this.list.push(
+                    {
+                        text: newTask,
+                        done: false,
+                    }
+                );
+
+                this.newTask = "";
+            },
+        },
     }
 );

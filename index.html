@@ -22,9 +22,13 @@
                         <label class="form-check-label" :for="'taskSwitchChecked' + i" :class="{'text-decoration-line-through': task.done}">
                             {{ task.text }}
                         </label>
+                        <span class="cursor-pointer" @click="removeToDo(i)">&cross;</span>
                     </div>
                 </li>
             </ul>
+            
+            <input type="text" v-model="newTask" class="rounded" @keyup.enter="addToDo">
+            <button class="btn btn-success" @click="addToDo">Aggiungi</button>
         </div>
     </div>
     
