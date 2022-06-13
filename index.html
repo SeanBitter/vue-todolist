@@ -10,8 +10,24 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-    
 
-    <script src="script.js"></script>
+    <div id="app">
+        <div class="container">
+            <h1 class="py-3">Vue Todolist</h1>
+
+            <ul class="list-unstyled">
+                <li v-for="(task, i) in list">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" :id="'taskSwitchChecked' + i" v-model="task.done">
+                        <label class="form-check-label" :for="'taskSwitchChecked' + i" :class="{'text-decoration-line-through': task.done}">
+                            {{ task.text }}
+                        </label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
 </body>
 </html>

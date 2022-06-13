@@ -27,3 +27,36 @@ true e viceversa)
 
 */
 
+new Vue(
+    {
+        el: "#app",
+        
+        data: {
+            list: [
+                {
+                    text: "Pranzare",
+                    done: false,
+                },
+
+                {
+                    text: "Studiare",
+                    done: false,
+                },
+
+                {
+                    text: "Fare la spesa",
+                    done: false,
+                },
+
+                {
+                    text: "Andare a correre",
+                    done: false,
+                },
+            ],
+        },
+
+        methods: {
+            
+        }
+    }
+);
